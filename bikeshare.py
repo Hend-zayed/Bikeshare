@@ -70,7 +70,6 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     zzz = df['Start Time'].dt
@@ -188,7 +187,7 @@ def user_stats(df,city):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
+    
 def random_users(df):
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
     view_data = view_data.lower()
@@ -199,7 +198,6 @@ def random_users(df):
         view_display = view_display.lower()
         if (view_display == 'no'):
             return random_users
-
 
 def main():
     while True:
